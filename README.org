@@ -1,0 +1,40 @@
+* Plugins criados com plugdata e Heavy
+  Este repositório contém três projetos Pure Data, que foram criados
+  utilizando [[https://github.com/plugdata-team/plugdata][plugdata]] para serem transformados em plugins utilizando
+  [[https://github.com/Wasted-Audio/hvcc][heavy]], além de uma demonstração do uso destes por meio de uma faixa
+  musical original.
+
+  Para aprender a utilizar Pure Data, é fortemente recomendada a [[https://www.youtube.com/watch?v=SLx7kjuFheY&list=PLuxj2jXSuTvvqYcDLJ-poN-JxvqX0wq-m][série
+  de vídeos]] do professor Andrew R. Brown no YouTube.
+
+  Segue um breve relatório de pontos notáveis no desenvolvimento dos
+  plugins criados, levando em consideração as limitações do Heavy em
+  relação ao Pure Data.
+
+** Sintetizador
+   Como a seleção de osciladores disponíveis está limitada aos
+   compatíveis com Heavy, dentro dos quais não existe um gerador de
+   ondas triangulares, foi necessário construir uma através da soma de
+   duas ondas de dente de serra inversas e limitadas na metade. Essa
+   técnica foi encontrada [[https://www.youtube.com/watch?v=ZTzAPR-9ovM][neste vídeo]] do canal Sound Codex.
+   Heavy conta com um objeto chamado =hv.vline~= que atua como um
+   substituto do objeto incompatível =vline~=. Porém, no momento da
+   compilação, a utilização deste gerava erros, então o conteúdo desse
+   objeto, que é na verdade uma abstração, foi copiado para ser
+   utilizado diretamente nos projetos, precisamente na construção dos
+   geradores de envelope.
+
+** Delay
+   Para permitir que os delays funcionem em estéreo, os parâmetros são
+   mandados para duas cópias diferentes do projeto inicial, cada uma
+   com um buffer de delay diferente, e seus resultados são enviados
+   separadamente para os canais de som esquerdo e direito.
+
+** Sequenciador
+   A função que normalmente poderia ser utilizada para controlar o
+   tempo das batidas do objeto =metro= com controle em BPM (mandando uma
+   mensagem como =tempo 120 permin=) não funcionava após o plugin ser
+   compilado: O metrônomo parecia ficar travado em uma velocidade
+   muito alta e a mudança dos parâmetros não causava efeitos. Então,
+   esta foi substituída por um cálculo manual de BPM para o intervalo
+   em milissegundos que =metro= recebe normalmente.
