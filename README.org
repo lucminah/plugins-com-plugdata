@@ -4,7 +4,7 @@
   [[https://github.com/Wasted-Audio/hvcc][heavy]], além de uma demonstração do uso destes por meio de uma faixa
   musical original, a seguir:
 
-  [[file:plugins-with-plugdata-demo.mp3][Demo]]
+  [[file:plugins-com-plugdata-demo.mp3][Demo]]
 
   Para aprender a utilizar Pure Data, é fortemente recomendada a [[https://www.youtube.com/watch?v=SLx7kjuFheY&list=PLuxj2jXSuTvvqYcDLJ-poN-JxvqX0wq-m][série
   de vídeos]] do professor Andrew R. Brown no YouTube.
