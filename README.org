@@ -4,6 +4,9 @@
   [[https://github.com/Wasted-Audio/hvcc][heavy]], além de uma demonstração do uso destes por meio de uma faixa
   musical original, disponível neste repositório em formato mp3.
 
+  A faixa foi criada dentro da DAW [[https://github.com/BespokeSynth/BespokeSynth][BespokeSynth]] e seu arquivo de
+  projeto (formato .bsk) também está disponível neste repositório.
+
   Para aprender a utilizar Pure Data, é fortemente recomendada a [[https://www.youtube.com/watch?v=SLx7kjuFheY&list=PLuxj2jXSuTvvqYcDLJ-poN-JxvqX0wq-m][série
   de vídeos]] do professor Andrew R. Brown no YouTube.
 
